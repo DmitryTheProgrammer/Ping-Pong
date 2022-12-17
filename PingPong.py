@@ -35,6 +35,10 @@ class Player(GameObject):
             self.rect.y -= self.speed_y
         if buttons[pygame.K_s] == True:
             self.rect.y += self.speed_y
+        if self.rect.bottom > window_hitbox.bottom:
+            self.rect.y -= self.speed_y
+        if self.rect.top < window_hitbox.top:
+            self.rect.y += self.speed_y
 
 ball = Ball(0, 0, 30, 30, 2, 1, (255, 0, 0))
 player = Player(0, 0, 10, 100, 0, 3, (255, 0, 0))
